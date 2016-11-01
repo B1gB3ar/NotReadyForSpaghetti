@@ -4,8 +4,8 @@ using System.Collections;
 public class ShootGun : MonoBehaviour {
 
     public int ammoCost;
-    public int bulletForce;
-    public int gunIdent;
+    public float bulletForce = 1000.0f;
+    public int gunIdent = 0;
     public GameObject shooterObj;
     //public BaseGun shooterGun;
     public GameObject bulletObj;
@@ -19,13 +19,13 @@ public class ShootGun : MonoBehaviour {
 
     }
 
-    void shoot()
+    public void shoot()
     {
         GameObject newObj = Instantiate(bulletObj,
             transform.position + shooterObj.transform.forward * 2,
             transform.rotation) as GameObject;
-        newObj.GetComponent<Rigidbody2D>().AddForce(shooterObj.transform.forward * //shooterGun.bulletSpeed);
-            5000.0f);
+        newObj.GetComponent<Rigidbody2D>().AddForce(shooterObj.transform.forward //shooterGun.bulletSpeed);
+            );
         newObj.GetComponent<Bullet>().initBull(gunIdent, true);
     }
 
