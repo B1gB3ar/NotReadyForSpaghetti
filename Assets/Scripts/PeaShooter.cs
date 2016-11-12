@@ -23,7 +23,7 @@ public class PeaShooter : BaseGun {
     void shoot()
     {
         base.fireGun();             //call method in BaseGun class for firing weapon
-        Bullet shot = new Bullet(damage, range, penetration, bulletSpeed, affectedByGravity, ricochet);
+        //Bullet shot = new Bullet(damage, range, penetration, bulletSpeed, affectedByGravity, ricochet);
         //call constructor for Bullet object
 
         //note: some weapons will have constructors for multiple bullets, some will have none at all.
